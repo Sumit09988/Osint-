@@ -2,7 +2,7 @@ import requests
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-BOT_TOKEN = "8395342822:AAH62unq_AL_vmF_WR88dNA5fh2JMK8bA8g"
+BOT_TOKEN = "8395342822:AAFw8Th9xsWioOoOu9QYQIIOufjPYdloq-g"
 ACCESS_KEY = "APEX123"
 ADMIN_ID = 7515864015
 
