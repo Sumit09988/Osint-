@@ -2,7 +2,7 @@ import requests
 from telegram import Update, ReplyKeyboardMarkup
 from telegram.ext import ApplicationBuilder, CommandHandler, MessageHandler, filters, ContextTypes
 
-BOT_TOKEN = "PUT_YOUR_TOKEN_HERE"
+BOT_TOKEN = "8395342822:AAH62unq_AL_vmF_WR88dNA5fh2JMK8bA8g"
 ACCESS_KEY = "APEX123"
 ADMIN_ID = 7515864015
 
@@ -26,7 +26,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
 
     users.add(user_id)
 
-    # 🔐 Access system
+    # 🔐 ACCESS SYSTEM
     if user_id not in authorized_users:
         if text == ACCESS_KEY:
             authorized_users.add(user_id)
@@ -35,7 +35,7 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
             await update.message.reply_text("❌ Invalid Key")
         return
 
-    # 📱 Number Search
+    # 📱 Number Search button
     if text == "📱 Number Search":
         await update.message.reply_text("Send number 📱")
         context.user_data["search"] = True
@@ -56,13 +56,12 @@ async def handle_message(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("Send number to get info 📱")
         return
 
-    # 📢 Broadcast command
+    # 📢 Broadcast
     if text == "/broadcast" and user_id == ADMIN_ID:
         await update.message.reply_text("📢 Send message to broadcast:")
         context.user_data["broadcast"] = True
         return
 
-    # 📢 Broadcast send
     if context.user_data.get("broadcast"):
         context.user_data["broadcast"] = False
         count = 0
